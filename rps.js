@@ -39,4 +39,4 @@ var compare = function(choice1, choice2){
  }
 return s;
 }
-compare(userChoice, computerChoice);
+console.log(compare(userChoice, computerChoice));
