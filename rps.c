@@ -2,23 +2,31 @@
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+void disp(char *c1, char *c2)
+{
+ printf("\nYou chose %s \nComputer chose %s\n", c1, c2);
+}
+
 int getRandomNumber()
 {
-int num;
-srand(time(NULL));
-num = rand();
-num = (num % 3) ;
-return num;
+ int num;
+ srand(time(NULL));
+ num = rand();
+ num = (num % 3) ;
+ return num;
 }
+
 void compare(char *choice1,char *choice2)
 { 
 
  if( strcmp(choice1, choice2)==0)
  {
+   disp(choice1,choice2);
    printf("The result is a tie!\n");
  }
  else if( strcmp(choice1,"rock")==0)
  {
+     disp(choice1,choice2);
      if( strcmp(choice2,"scissors")==0)
      {
          printf("rock wins\n");
@@ -30,7 +38,8 @@ void compare(char *choice1,char *choice2)
  }
  else if( strcmp(choice1,"paper")==0)
  {
-     if( strcmp(choice2,"rock")==0)
+    disp(choice1,choice2); 
+    if( strcmp(choice2,"rock")==0)
     {
          printf("paper wins\n");
     }
@@ -41,6 +50,7 @@ void compare(char *choice1,char *choice2)
  }
  else if( strcmp(choice1,"scissors")==0)
  {
+     disp(choice1,choice2);
      if( strcmp(choice2,"rock")==0)
      {
          printf("rock wins\n");
@@ -79,7 +89,6 @@ int main()
        {
 	  strcpy(computerChoice,"scissors");
        }
-       printf("\nYou chose %s \nComputer chose %s \n", userChoice, computerChoice);
        compare(userChoice, computerChoice);
    }
   else
@@ -88,3 +97,5 @@ int main()
    }
 return 0;
 }       
+
+ 
