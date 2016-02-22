@@ -69,7 +69,7 @@ int main()
 {
   char choice;
   char userChoice[8], computerChoice[8];
-  printf("Do you want to play Rock, Paper and Scissors & ? \nPress y or n\n");
+  printf("Do you want to play Rock, Paper and Scissors & ? \nPress y to play or n to exit\n");
   scanf("%c", &choice);
   if (choice=='y')
     {
